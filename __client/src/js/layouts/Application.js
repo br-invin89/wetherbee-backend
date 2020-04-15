@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 
-import Nav from './Nav';
+import Nav from '../components/Nav';
 import * as authActions from '../actioncreators/authActions';
 
 

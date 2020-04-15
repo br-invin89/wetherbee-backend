@@ -7,21 +7,36 @@ const bcrypt = require('bcrypt');
 mongoose.Promise = global.Promise;
 
 const userSchema = mongoose.Schema({
-	username: {
+	name: {
+		type: String,
+		default: ''
+	},
+	phone: {
 		type: String,
 		required: true,
 		unique: true,
 		trim: true
 	},
+	email: {
+		type: String,
+		default: ''
+	},
 	password: {
 		type: String,
 		required: true
 	},
-	points: {
-		type: Number,
-		default: 0
+	isAdmin: {
+		type: Boolean,
+		default: false
+	},
+	schoolName: {
+		type: String,
+		default: ''
+	},
+	grade: {
+		type: String,
+		default: ''
 	}
-
 },
 	{
 		timestamps: {
@@ -32,9 +47,9 @@ const userSchema = mongoose.Schema({
 );
 
 // authenticate user login input against db document
-userSchema.statics.authenticate = function (username, password) {
+userSchema.statics.authenticate = function (phone, password) {
 	return new Promise((resolve, reject) => {
-		this.model('user').findOne({ username })
+		this.model('user').findOne({ phone })
 			.exec()
 			.then((user) => {
 				if (user) {
@@ -44,7 +59,7 @@ userSchema.statics.authenticate = function (username, password) {
 						match ? resolve(user) : function () {
 							const err = new Error('Invalid password');
 							// although i wouldn't differentiate
-							// username error from pass error for the sake of security
+							// phone error from pass error for the sake of security
 							err.status = 401;
 							reject(err);
 						}();

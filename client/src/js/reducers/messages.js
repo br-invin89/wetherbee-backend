@@ -3,6 +3,7 @@
 import * as ActionTypes from '../actiontypes/constants';
 
 const initialState = {
+	loading: false,
 	successMessage: '',
 	errorMessage: ''
 };
@@ -18,6 +19,16 @@ export default function (state = initialState, action) {
 			return {
 				...state,
 				errorMessage: action.message
+			};
+		case ActionTypes.ANY_FETCH_START: 
+			return {
+				...state,
+				loading: true
+			};
+		case ActionTypes.ANY_FETCH_END:
+			return {
+				...state,
+				loading: false
 			};
 		default:
 			return state;

@@ -1,4 +1,9 @@
-
+.bounds {
+    max-width: 1024px;
+}
+.nav > li > a {
+    padding: 5px;
+}
 .nav>li>a:focus,
 .nav>li>a:hover {
     color: #fff;

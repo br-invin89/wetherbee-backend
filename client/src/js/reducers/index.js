@@ -1,7 +1,7 @@
 import auth from './auth';
-import questions from './questions';
 import messages from './messages';
+import users from './users';
 
 import { combineReducers } from 'redux';
 
-export default combineReducers({ auth, questions, messages });
+export default combineReducers({ auth, messages, users });

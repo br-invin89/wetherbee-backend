@@ -12,8 +12,8 @@ import { bindActionCreators } from 'redux';
 import * as authActions from '../actioncreators/authActions';
 
 // components
-import { Error, Success } from './Messages';
-import LinkWrap from './LinkWrap';
+import { Error, Success } from '../components/Messages';
+import LinkWrap from '../components/LinkWrap';
 
 // utils
 import { submitBtnClasses } from '../dynamicStyles';

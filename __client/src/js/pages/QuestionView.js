@@ -5,9 +5,9 @@ import { bindActionCreators } from 'redux';
 
 import * as questionActions from '../actioncreators/questionActions';
 
-import Answer from './Answer';
-import { Success, Error } from './Messages';
-import TextareForm from './TextareaForm';
+import Answer from '../components/Answer';
+import { Success, Error } from '../components/Messages';
+import TextareForm from '../components/TextareaForm';
 
 QuestionView.propTypes = {
 	question: PropTypes.oneOfType([

@@ -10,7 +10,8 @@ const expressJWT = require('express-jwt');
 
 // app modules:
 const secret = require('./secrets');
-const questionRoutes = require('./api/questions');
+const apiRoutes = require('./api');
+
 const authRoutes = require('./auth');
 const handleError = require("./errorHandler").handleError;
 require("./database"); // need this line otherwise app won't know about the database module
@@ -53,8 +54,9 @@ app.use(expressJWT({
 	{
 		path: [
 			'/auth/login',
+			'/auth/admin-login',
 			'/auth/register',
-			{ url: '/api/questions', methods: ['GET', 'OPTIONS'] }
+			'/api/questions'
 		]
 	}
 ));
@@ -80,7 +82,7 @@ app.use(function (req, res, next) {
 	next();
 });
 
-app.use('/api', questionRoutes);
+app.use('/api', apiRoutes);
 app.use('/auth', authRoutes);
 // NOTHING served on '/' (root)
 

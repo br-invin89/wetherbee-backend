@@ -12,8 +12,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as authActions from '../actioncreators/authActions';
 
-import LinkWrap from './LinkWrap';
-import { Success, Error } from './Messages';
+import LinkWrap from '../components/LinkWrap';
+import { Success, Error } from '../components/Messages';
 
 // Utils
 import useInput from '../hooks/useInput';
@@ -63,11 +63,13 @@ function Login({ history, location, successMessage, errorMessage, loggedIn, acti
 						onChange={onPasswordChange}
 					/>
 					<input className={submitBtnClasses(!username || !password)} type="submit" value="Login" />
+					{/*
 					<span className="pull-right" style={{ marginTop: 15 }}>
 						Don't have an account yet?
 						&nbsp;
 							<LinkWrap to="/register">Sign up</LinkWrap>
 					</span>
+					*/}
 				</div>
 			</div>
 		</form>
