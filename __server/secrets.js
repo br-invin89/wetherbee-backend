@@ -1,1 +1,0 @@
-module.exports = 'my super secret secret';
