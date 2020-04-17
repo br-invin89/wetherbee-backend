@@ -36,6 +36,20 @@ const userSchema = mongoose.Schema({
 	grade: {
 		type: String,
 		default: ''
+	},
+	examTypes: {
+		ACT: {
+			type: Boolean,
+			default: false
+		},
+		SAT: {
+			type: Boolean,
+			default: false
+		},
+		PSAT: {
+			type: Boolean,
+			default: false
+		}
 	}
 },
 	{

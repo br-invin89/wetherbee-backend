@@ -11,9 +11,9 @@ mongoose.set('debug', true);
 
 // POST /register
 router.post('/register', function (req, res, next) {
-	const { phone, password, name, email, schoolName, grade } = req.body;
+	const { phone, password, name, email, schoolName, grade, examTypes } = req.body;
 	if (phone && password) {
-		const newUser = { phone, password, name, email, schoolName, grade };
+		const newUser = { phone, password, name, email, schoolName, grade, examTypes };
 		User.create(newUser)
 			.then(() => {
 				res.status(201).json({ message: 'Registered successfully' })

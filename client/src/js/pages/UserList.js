@@ -38,6 +38,9 @@ function UserList({
             <th>Email</th>
             <th>School Name</th>
             <th>Grade</th>
+            <th>ACT</th>
+            <th>SAT</th>
+            <th>PSAT</th>
           </thead>
           <tbody>
             {
@@ -49,6 +52,9 @@ function UserList({
                   <td>{user.email}</td>
                   <td>{user.schoolName}</td>
                   <td>{user.grade}</td>
+                  <td><input type="checkbox" checked={(user.examTypes && user.examTypes.ACT)} disabled={true} /></td>
+                  <td><input type="checkbox" checked={(user.examTypes && user.examTypes.SAT)} disabled={true} /></td>
+                  <td><input type="checkbox" checked={(user.examTypes && user.examTypes.PSAT)} disabled={true} /></td>
                 </tr>
               ))
             }
