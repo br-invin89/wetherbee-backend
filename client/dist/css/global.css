@@ -487,7 +487,6 @@ input[type="button"] {
   text-decoration: none;
   color: #2690c6;
   background: none;
-  box-shadow: 0 0 0 2px #2690c6 inset;
   position: relative;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;

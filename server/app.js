@@ -55,8 +55,7 @@ app.use(expressJWT({
 		path: [
 			'/auth/login',
 			'/auth/admin-login',
-			'/auth/register',
-			'/api/questions'
+			'/auth/register'
 		]
 	}
 ));

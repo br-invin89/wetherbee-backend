@@ -25,6 +25,7 @@ import WelcomeView from './pages/WelcomeView';
 import NotFound from './pages/NotFound';
 import LoginView from './pages/LoginView';
 import UserList from './pages/UserList';
+import Questions from './pages/Questions';
 
 const store = createStore(AppReducer, applyMiddleware(thunk, logger));
 
@@ -36,6 +37,7 @@ render(
 					<Route path='/' exact component={WelcomeView} />
 					<Route path="/login" component={LoginView} />
 					<Route path="/users" component={UserList} />
+					<Route path="/questions" exact component={Questions} />
 					<Route path="*" component={NotFound} />
 				</Switch>
 			</Application>

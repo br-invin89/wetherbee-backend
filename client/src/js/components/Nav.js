@@ -18,6 +18,9 @@ export default function Nav(props) {
       <li>
         <NavLink to="/users" className="btn">Users</NavLink>
       </li>
+      <li>
+        <NavLink to="/questions" className="btn">Questions</NavLink>
+      </li>
       <li className="pull-right user-details">
         <a
           href="#"
